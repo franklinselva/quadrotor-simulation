@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+
+<launch>
+
+    <arg name="enable_logging" default="true"/>
+    <arg name="enable_ground_truth" default="true"/>
+    <arg name="log_file" default="quad"/>
+    <arg name="headless" default="true"/>
+    <arg name="gui" default="true"/>
+
+    <!-- Spawn 3DR Model -->
+    <include file="$(find quad_gazebo)/launch/quad_world.launch" />
+</launch>
