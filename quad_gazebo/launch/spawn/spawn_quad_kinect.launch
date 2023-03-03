@@ -34,10 +34,15 @@
          -model $(arg name)" respawn="false" output="screen">
   </node>
 
-  <!-- spawn image viewer for camera 
-    <node pkg="image_view" type="image_view" name="image_view">
-      <remap from="image" to="/$(arg name)/camera_/image_raw" />
-    </node>
--->
+  <!-- spawn image viewer for camera  -->
+  <node pkg="image_view" type="image_view" name="image_view">
+    <remap from="image" to="/$(arg name)/camera_/image_raw" />
+  </node>
+
+  <!-- We do not have a robot connected, so publish fake joint states -->
+  <node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher"></node>
+
+  <!-- Given the published joint states, publish tf for the robot links -->
+  <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" args="-param robot_description"/>
 
 </launch>
