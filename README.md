@@ -189,7 +189,7 @@ A command line tool check_urdf attempts to parse a file as a URDF description, a
 
 ```
 $ cd ros/catkin_ws/src/arducopter_slam/quad_description/urdf
-$ rosrun xacro xacro.py kit_c.xacro -o /tmp/kit_c.urdf
+$ rosrun xacro xacro kit_c.xacro -o /tmp/kit_c.urdf
 ```
 
 Then run the urdf check:
